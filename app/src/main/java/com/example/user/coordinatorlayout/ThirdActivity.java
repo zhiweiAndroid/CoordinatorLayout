@@ -2,68 +2,58 @@ package com.example.user.coordinatorlayout;
 
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.support.design.widget.TabLayout;
-import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
+
+import com.jaeger.library.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class ThirdActivity extends AppCompatActivity {
 
-    private ViewPager vp;
+
     private Toolbar toolbar;
-    private TabLayout tableLayout;
     private AppBarLayout appBarLayout;
     private List<Fragment> fragments=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_third);
         initFragment();
         initView();
         initToolbar();
-        initTab();
         initListener();
     }
 
     private void initFragment() {
-     MyFragment myFragment=new MyFragment();
-     MyFragment2 myFragment2=new MyFragment2();
-     MyFragment3 myFragment3=new MyFragment3();
-     fragments.add(myFragment);
-     fragments.add(myFragment2);
-     fragments.add(myFragment3);
+        MyFragment myFragment=new MyFragment();
+        MyFragment2 myFragment2=new MyFragment2();
+        MyFragment3 myFragment3=new MyFragment3();
+        fragments.add(myFragment);
+        fragments.add(myFragment2);
+        fragments.add(myFragment3);
     }
 
     private void initView() {
-        vp = findViewById(R.id.viewpager);
         toolbar = findViewById(R.id.toolbar);
-        tableLayout = findViewById(R.id.tabs);
         appBarLayout = findViewById(R.id.app_bar_layout);
     }
 
-    private void initTab() {
-        vp.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(),fragments));
-        vp.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tableLayout));
-        tableLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(vp));
-    }
-
-
-
     private void initToolbar() {
-            toolbar.setTitle("CoordinatorLayout");
-            // 将toolBar和actionBar进行关联
-            setSupportActionBar(toolbar);
+        toolbar.setTitle("CoordinatorLayout");
+        // 将toolBar和actionBar进行关联
+        setSupportActionBar(toolbar);
     }
 
 

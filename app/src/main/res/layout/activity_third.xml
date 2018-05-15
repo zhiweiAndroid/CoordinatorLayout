@@ -1,0 +1,83 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.coordinatorlayout.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            app:collapsedTitleTextAppearance="@style/ToolBarTitleText"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleGravity="left|bottom"
+            app:expandedTitleMarginStart="16dp"
+            app:expandedTitleTextAppearance="@style/transparentText"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="普陀山"
+            >
+             <ImageView
+                 android:src="@mipmap/timg"
+                 app:layout_collapseMode="parallax"
+                 android:scaleType="centerCrop"
+                 app:layout_collapseParallaxMultiplier="0.7"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent" />
+
+            <!--layout_collapseMode (折叠模式) - 有两个值:
+                 pin -  设置为这个模式时，当CollapsingToolbarLayout完全收缩后，Toolbar还可以保留在屏幕上。
+                 parallax - 设置为这个模式时，在内容滚动时，CollapsingToolbarLayout中的View（比如ImageView)也可以同时滚动，实现视差滚动效果，通常和layout_collapseParallaxMultiplier(设置视差因子)搭配使用。
+                layout_collapseParallaxMultiplier(视差因子) - 设置视差滚动因子，值为：0~1。  具体效果自行测试-->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="match_parent">
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <TextView
+               android:padding="16dp"
+               android:textColor="#333333"
+               android:textSize="14sp"
+               android:lineSpacingExtra="5dp"
+               android:text="        普陀山原名梅岑山，因西汉末年梅福在此修道而得名。唐咸通四年（863年），日本高僧慧锷从五台山请得观音神像回国，途经莲花洋遇风涛，以为观音不肯去日本，便留下神像，称不肯去观音。五代梁朝贞明二年（916年）建不肯去观音院。宋元丰三年（1080年）朝廷赐银，改建为宝陀观音寺，从此香火兴盛。南宋嘉定七年（1214年），钦定为观音道场，并根据佛经补怛洛迦，更山名为普陀洛迦山，亦称补陀洛迦山。明朝时，把莲花洋南的一小岛称洛迦山，
+          就有了普陀山和洛迦山两个山名。观音在古天竺就称南海观音，相传是因为：一、观音出在古天竺（今印度），而古天竺属南亚，加上观音所在的补怛洛迦山在南海，故称南海观音；二、南海与南无相似。唐代著名文学家王勃的《观音大士赞》曰：“南海海深幽绝处，碧绀嵯峨连水府，号名七宝洛迦山，自在观音于彼住。”王勃卒于676年，就算此《赞》作于676年，亦比不肯去观音到普陀山早187年。可见，不是因为有了南海普陀山才称南海观音的，恰好相反，是因为南海观音，才把普陀山改称为南海普陀山的。另一位曾在普陀山长期隐居修道的著名道教人物是梅福，字子真。他精娴诗书，博学多才，曾补南昌尉，因见王莽擅权，汉室将倾，便弃妻子，隐姓埋名，于汉平帝元始年间（公元1——5年）渡海来普陀山，结茅山椒，采药炼丹，直至终老。后人因此称此山为“梅岑山”，此名沿袭了千余年。北宋宣和年间，山上尚有梅福留下的“履迹瓢痕”。今普陀山普济寺西北有梅岑峰，冈阜起伏，林壑幽美，峰顶建有梅福庵，相传是当年梅福结茅隐修之处。梅福庵内有灵佑洞，又名炼丹洞，内壁岩石嶙峋，状若百兽，崖间渗水，常年不息，倾入仙童葫芦塑像中，被称为“仙水”。洞中塑有梅福像，清康熙年间吴瞻泰题洞额，相传此处为梅福炼丹处。庵内有一“梅福井”，方广1米余，水碧味甘，清澈见底，相传为梅福炼丹用井。梅岑峰西麓下的梅湾，巉岩刻露，林木葱茏，景色幽美，据古志书载梅福曾于此广植梅树。后人追怀其亮节高风，咏叹之诗颇多，如：清祝德风诗《梅岑峰》云：“子真仙去剩空山，万树幽香拥翠鬟。半夜蛟龙听铁笛，梅花吹落白云湾。”[14]明李桐诗《题梅湾春晓》云：“万树梅花开满湾，冥蒙春色驻枝间。回思仙尉成丹日，开落随时待九还。”[15]明邵辅忠诗《梅湾春晓》云：“几树疏梅倚石斜，问梅开落属谁家。东风昨夜频吹俏，也作如来小白花。”[16]清释明慧诗《游梅湾》云：“梅花万树满前湾，仙尉于今丹灶闲。春色自来还自去，何曾一片落人间。”[17]清徐载阳诗《梅岑仙井》云：“汉室衣冠视若泥，飘然浮海凿山池。丹成跨鹤归何处，留得清泉待月辉。”[18]清释法湜诗《春日访梅岑庵题壁》云：“行义何妨又洁身，梅花独占首阳春。寻来丹井今犹在，无复当年跨鹤人。”[19]清朱绪曾诗《梅仙庵》云：“仙尉骑鸾去不回，炼丹古井旁林隈。吴门市卒埋名久，海外孤岑尚姓梅。"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        app:layout_anchor="@id/app_bar_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchorGravity="end|bottom|right"
+        android:layout_marginRight="10dp" />
+
+</android.support.design.widget.CoordinatorLayout>

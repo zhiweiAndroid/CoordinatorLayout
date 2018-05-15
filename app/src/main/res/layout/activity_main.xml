@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root_layout"
@@ -23,17 +24,44 @@
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
+            app:tabIndicatorHeight="2.0dp"
+            app:tabTextColor="@android:color/black"
+            android:background="@android:color/white"
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabIndicatorColor="@color/colorPrimary"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:fillViewport="false"
+            android:layout_height="?attr/actionBarSize" >
+          <android.support.design.widget.TabItem
+              android:layout_width="match_parent"
+              android:text="Tab1"
+              android:layout_height="match_parent" />
+            <android.support.design.widget.TabItem
+                android:text="Tab2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <android.support.design.widget.TabItem
+                android:text="Tab3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </android.support.design.widget.TabLayout>
 
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:scrollbars="none"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </android.support.v4.widget.NestedScrollView>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
