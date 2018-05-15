@@ -1,5 +1,5 @@
 # CoordinatorLayout
-这个demo设计CoordinatorLayout三种用法：
+这个demo集合了CoordinatorLayout三种用法：
 
 1.CoordinatorLayout+AppBarLayout+Toolbar+TabLayout+Viewpager
 
